@@ -1,0 +1,278 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --text: #151515;
+    --muted: #666;
+    --line: #e5e5e5;
+    --bg: #f6f6f6;
+    --accent: #d71920;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+}
+
+.container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.site-header {
+    background: #111;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-inner {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--accent);
+    margin-left: 5px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #ff4b51;
+}
+
+.hero {
+    margin-top: 35px;
+    background: white;
+    padding: 55px;
+    display: grid;
+    grid-template-columns: 1.4fr .6fr;
+    gap: 40px;
+    align-items: center;
+    border: 1px solid var(--line);
+}
+
+.label, .category {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    margin: 10px 0 18px;
+}
+
+.lead {
+    color: var(--muted);
+    font-size: 18px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 12px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-weight: 700;
+}
+
+.hero-card, .placeholder-image, .article-image {
+    background: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-card {
+    min-height: 260px;
+    padding: 30px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero-card strong {
+    font-size: 42px;
+    line-height: 1;
+    margin-top: 10px;
+}
+
+.section {
+    margin: 55px 0;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid #111;
+    margin-bottom: 22px;
+}
+
+.section-title h2 {
+    margin: 0 0 10px;
+}
+
+.section-title span {
+    color: var(--muted);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.news-card {
+    background: white;
+    border: 1px solid var(--line);
+}
+
+.placeholder-image {
+    height: 190px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.news-content {
+    padding: 22px;
+}
+
+.news-content h3 {
+    font-size: 21px;
+    line-height: 1.25;
+    margin: 7px 0;
+}
+
+.news-content p {
+    color: var(--muted);
+}
+
+.news-content a, .back-link {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.simple-list {
+    background: white;
+    border: 1px solid var(--line);
+}
+
+.simple-list a {
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--line);
+}
+
+.simple-list a:last-child {
+    border-bottom: 0;
+}
+
+.article-page {
+    max-width: 900px;
+    padding: 60px 0;
+}
+
+.article-page h1 {
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.05;
+    margin: 10px 0;
+}
+
+.meta {
+    color: var(--muted);
+}
+
+.article-image {
+    height: 420px;
+    margin: 30px 0;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.article-body {
+    background: white;
+    padding: 35px;
+    font-size: 18px;
+}
+
+.article-body blockquote {
+    border-left: 4px solid var(--accent);
+    margin: 30px 0;
+    padding: 10px 20px;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+footer {
+    background: #111;
+    color: #aaa;
+    padding: 28px 0;
+    margin-top: 60px;
+    font-size: 13px;
+}
+
+@media (max-width: 800px) {
+    .header-inner {
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-image {
+        height: 280px;
+    }
+}
